@@ -10,6 +10,12 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- task: SonarQubePrepare@4
+  inputs:
+    SonarQube: 'SQ'
+    scannerMode: 'Other'
+
+
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
@@ -21,10 +27,6 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
 
-- task: SonarQubePrepare@4
-  inputs:
-    SonarQube: 'SQ'
-    scannerMode: 'Other'
 
 - task: SonarQubeAnalyze@4
 
