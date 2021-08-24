@@ -24,9 +24,7 @@ steps:
 - task: SonarQubePrepare@4
   inputs:
     SonarQube: 'SQ'
-    scannerMode: 'MSBuild'
-    projectKey: 'Jenkins_multijob_pipeline_code'
-    projectName: 'Jenkins_multijob_pipeline_code'
+    scannerMode: 'Other'
 
 - task: SonarQubeAnalyze@4
 
